@@ -32,7 +32,7 @@ exports.createResolver = (resFn, errFn) => {
                 if (util_1.isNotNullOrUndefined(r))
                     return r;
                 // Call the child resolver function or a no-op (returns null)
-                return util_1.isFunction(cResFn) ? util_1.Promisify(cResFn)(root, args, context) : Promise.resolve(null);
+                return util_1.isFunction(cResFn) ? util_1.Promisify(cResFn)(root, args, context, info) : Promise.resolve(null);
             });
         };
         const childErrFn = (root, args, context, err) => {
